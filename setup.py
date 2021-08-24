@@ -26,7 +26,7 @@ setup(
     python_requires = '>=3.8',
     classifiers = [
         "Programming Language :: Python :: 3.8",
-        "Operating System :: Cross-platform"
+        "Operating System :: OS Independent"
     ],
     entry_points = '''
         [console_scripts]
