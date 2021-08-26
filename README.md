@@ -21,6 +21,11 @@ If you want to install Sedona with pip, you just need to run:
 pip3 install sedona
 ```
 
+You can also run:
+```
+sudo pip3 install sedona
+```
+
 # How to use
 In order to use Sedona, go to your command line and type:
 ```
