@@ -27,4 +27,4 @@ def main():
 
     converter.convert_audio_stream(downloader.title)
 
-    print('Done! File saved to your music directory.')
+    print('Done! File saved to your home directory.')
