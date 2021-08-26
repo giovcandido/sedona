@@ -1,5 +1,9 @@
 from pytube import YouTube
 
+from tempfile import gettempdir
+
+from os import path, mkdir
+
 class Downloader:
 
     def __init__(self, url = None):
@@ -27,3 +31,13 @@ class Downloader:
     @property
     def title(self):
         return self.__video.title
+
+    def download_audio_stream(self):
+        temp_dir = gettempdir()
+
+        temp_dir = path.join(temp_dir, 'sedona')
+
+        if not path.exists(temp_dir):
+            mkdir(temp_dir)
+
+        return self.__video.download(output_path=temp_dir)
