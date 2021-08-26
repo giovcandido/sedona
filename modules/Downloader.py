@@ -1,8 +1,8 @@
-from pytube import YouTube
+import pafy
 
 from tempfile import gettempdir
 
-from os import path, mkdir
+from os import path, mkdir, remove
 
 class Downloader:
 
@@ -24,9 +24,7 @@ class Downloader:
             self.__create_video()
     
     def __create_video(self):
-        youtube = YouTube(self.__url)
-
-        self.__video = youtube.streams.get_audio_only()
+        self.__video = pafy.new(self.__url)
     
     @property
     def title(self):
@@ -39,5 +37,14 @@ class Downloader:
 
         if not path.exists(temp_dir):
             mkdir(temp_dir)
+        
+        best_audio = self.__video.getbestaudio()
+        
+        output_file = path.join(temp_dir, best_audio.filename)
 
-        return self.__video.download(output_path=temp_dir)
+        if path.exists(output_file):
+            remove(output_file)
+
+        best_audio.download(filepath=temp_dir)
+
+        return output_file
