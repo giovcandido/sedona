@@ -16,5 +16,6 @@ def main():
 
     downloader = Downloader(video_url)
 
-    print(downloader.url)
-    print(downloader.title)
+    video_path = downloader.download_audio_stream()
+
+    print(video_path)
