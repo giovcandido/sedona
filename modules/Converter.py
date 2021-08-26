@@ -19,7 +19,7 @@ class Converter:
         audio_stream = AudioSegment.from_file(self.__path)
 
         sedona_dir = path.expanduser('~')
-        sedona_dir = path.join(sedona_dir, 'sedona')
+        sedona_dir = path.join(sedona_dir, 'SedonaMP3')
 
         if not path.exists(sedona_dir):
             mkdir(sedona_dir)
