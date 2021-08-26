@@ -11,7 +11,7 @@ with open("requirements.txt", encoding='utf-8') as f:
 # Configure setup 
 setup(
     name = 'sedona',
-    version = '0.1.0',
+    version = '0.1.1',
     author = 'Giovani Candido',
     author_email = 'giovcandido@outlook.com',
     license = 'GNU General Public License v3.0',
