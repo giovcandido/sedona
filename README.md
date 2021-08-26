@@ -3,7 +3,10 @@ Sedona is a free youtube mp3 downloader made with Python.
 
 It's been made with Python 3.8 and tested on Linux.
 
+# Dependencies
 Check requirements.txt to see a complete list of dependencies. But, don't worry about them. They are automatically installed for you.
+
+The FFmpeg package is required for the MP3 conversion, you need to install it on your OS. If you're on Linux, you may not need to install it or you can do so through your package manager. If your on Windows, for example, follow some guide like [this one](https://www.wikihow.com/Install-FFmpeg-on-Windows).
 
 # How to install
 There are two ways you can install Sedona. You can either install it from source or you can get it using pip.
