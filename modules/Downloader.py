@@ -33,7 +33,7 @@ class Downloader:
     def download_audio_stream(self):
         temp_dir = gettempdir()
 
-        temp_dir = path.join(temp_dir, 'sedona')
+        temp_dir = path.join(temp_dir, 'Sedona')
 
         if not path.exists(temp_dir):
             mkdir(temp_dir)
