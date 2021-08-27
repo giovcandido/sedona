@@ -1,10 +1,11 @@
 from setuptools import setup, find_packages
 
-from json import load
+from os.path import join
 
 # Load package version
-with open('version.json') as f:
-    version = load(f)['version']
+version_path = join('sedona', 'version.py')
+
+exec(open(version_path).read())
 
 # Load long description 
 with open("README.md", encoding='utf-8') as f:
@@ -17,7 +18,7 @@ with open("requirements.txt", encoding='utf-8') as f:
 # Configure setup 
 setup(
     name = 'sedona',
-    version = version,
+    version = __version__,
     author = 'Giovani Candido',
     author_email = 'giovcandido@outlook.com',
     license = 'GNU General Public License v3.0',
