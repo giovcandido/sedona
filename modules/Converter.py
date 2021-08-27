@@ -24,6 +24,6 @@ class Converter:
         if not path.exists(sedona_dir):
             mkdir(sedona_dir)
 
-        output_file = path.join(sedona_dir, title)
+        output_file = path.join(sedona_dir, title) + '.mp3'
 
         audio_stream.export(output_file, format="mp3", bitrate="256k")
