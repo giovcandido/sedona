@@ -25,7 +25,6 @@ setup(
     long_description = long_description,
     long_description_content_type = 'text/markdown',
     url = 'https://github.com/giovcandido/sedona',
-    py_modules = ['sedona', 'modules'],
     packages = find_packages(),
     install_requires = [requirements],
     python_requires = '>=3.8',
@@ -35,6 +34,6 @@ setup(
     ],
     entry_points = '''
         [console_scripts]
-        sedona=sedona:main
+        sedona=sedona.__main__:main
     '''
 )
