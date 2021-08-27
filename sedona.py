@@ -1,12 +1,23 @@
 from argparse import ArgumentParser
 
+from json import load
+
 from modules.Downloader import Downloader
 from modules.Converter import Converter
 
 def parse_arguments():
-    parser = ArgumentParser(description="Sedona is a free youtube downloader and mp3 converter.")
+    parser = ArgumentParser(description='Sedona is a free youtube downloader and mp3 converter.')
     
-    parser.add_argument('url', metavar='URL', type=str, help="Video URL")
+    # Load package version
+    with open('version.json') as f:
+        version = load(f)['version']
+
+    # Set version text
+    version_text = '%(prog)s {version}'.format(version=version)
+    
+    parser.add_argument('-v', '--version', action='version', version=version_text, help='show package version')
+
+    parser.add_argument('url', metavar='URL', type=str, help='Video URL')
 
     return parser.parse_args()
 
