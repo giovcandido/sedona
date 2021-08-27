@@ -1,5 +1,11 @@
 from setuptools import setup, find_packages
 
+from json import load
+
+# Load package version
+with open('version.json') as f:
+    version = load(f)['version']
+
 # Load long description 
 with open("README.md", encoding='utf-8') as f:
     long_description = f.read()
@@ -11,7 +17,7 @@ with open("requirements.txt", encoding='utf-8') as f:
 # Configure setup 
 setup(
     name = 'sedona',
-    version = '0.1.1',
+    version = version,
     author = 'Giovani Candido',
     author_email = 'giovcandido@outlook.com',
     license = 'GNU General Public License v3.0',
