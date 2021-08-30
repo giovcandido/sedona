@@ -1,5 +1,7 @@
 from argparse import ArgumentParser
 
+from sys import exit
+
 from .version import __version__
 from .description import __description__
 
@@ -23,16 +25,28 @@ def main():
 
     video_url = args.url
 
-    downloader = Downloader(video_url)
+    # Download youtube video to temp directory
+    try:
+        downloader = Downloader(video_url)
     
-    print('Downloading %s...' % (downloader.title))
+        print('Downloading %s...' % (downloader.title))
 
-    video_path = downloader.download_audio_stream()
+        video_path = downloader.download_audio_stream()
+    except ValueError as err:
+        print(err)
 
-    converter = Converter(video_path)
+        exit(1)
+    
+    # Get video and convert it to mp3 to sedona directory
+    try:
+        converter = Converter(video_path)
 
-    print('Converting downloaded video to mp3...')
+        print('Converting downloaded video to mp3...')
 
-    converter.convert_audio_stream(downloader.title)
+        converter.convert_audio_stream(downloader.title)
 
-    print('Done! File saved to your home directory.')
+        print('Done! File saved to your home directory.')
+    except ValueError as err:
+        print(err)
+        
+        exit(1)
