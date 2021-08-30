@@ -2,6 +2,8 @@ from argparse import ArgumentParser
 
 from sys import exit
 
+from pyfiglet import Figlet
+
 from .version import __version__
 from .description import __description__
 
@@ -9,8 +11,11 @@ from .Downloader import Downloader
 from .Converter import Converter
 
 def parse_arguments():
-    parser = ArgumentParser(description=__description__)
+    figlet = Figlet(font='standard')
+    print(figlet.renderText('Sedona'))
 
+    parser = ArgumentParser(description=__description__)
+    
     # Set version text
     version_text = '%(prog)s {version}'.format(version=__version__)
     
