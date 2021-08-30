@@ -2,10 +2,17 @@ from setuptools import setup, find_packages
 
 from os.path import join
 
-# Load package version
-version_path = join('sedona', 'version.py')
+# Load version
+exec(open(join('sedona', 'version.py')).read())
 
-exec(open(version_path).read())
+# Load author
+exec(open(join('sedona', 'author.py')).read())
+
+# Load author email
+exec(open(join('sedona', 'author_email.py')).read())
+
+# Load description
+exec(open(join('sedona', 'description.py')).read())
 
 # Load long description 
 with open("README.md", encoding='utf-8') as f:
@@ -19,10 +26,10 @@ with open("requirements.txt", encoding='utf-8') as f:
 setup(
     name = 'sedona',
     version = __version__,
-    author = 'Giovani Candido',
-    author_email = 'giovcandido@outlook.com',
+    author = __author__,
+    author_email = __author_email__,
     license = 'GNU General Public License v3.0',
-    description = 'Sedona is a free youtube mp3 downloader made with Python.',
+    description = __description__,
     long_description = long_description,
     long_description_content_type = 'text/markdown',
     url = 'https://github.com/giovcandido/sedona',

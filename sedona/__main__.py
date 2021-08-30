@@ -1,17 +1,18 @@
 from argparse import ArgumentParser
 
 from .version import __version__
+from .description import __description__
 
 from .Downloader import Downloader
 from .Converter import Converter
 
 def parse_arguments():
-    parser = ArgumentParser(description='Sedona is a free youtube downloader and mp3 converter.')
-    
+    parser = ArgumentParser(description=__description__)
+
     # Set version text
     version_text = '%(prog)s {version}'.format(version=__version__)
     
-    parser.add_argument('-v', '--version', action='version', version=version_text, help='show package version')
+    parser.add_argument('-v', '--version', action='version', version=version_text, help='show program version')
 
     parser.add_argument('url', metavar='URL', type=str, help='Video URL')
 
