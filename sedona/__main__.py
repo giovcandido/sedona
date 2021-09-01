@@ -1,29 +1,9 @@
-from argparse import ArgumentParser
-
 from sys import exit
 
-from pyfiglet import Figlet
-
-from .version import __version__
-from .description import __description__
+from .cli import parse_arguments
 
 from .Downloader import Downloader
 from .Converter import Converter
-
-def parse_arguments():
-    figlet = Figlet(font='standard')
-    print(figlet.renderText('Sedona'))
-
-    parser = ArgumentParser(description=__description__)
-    
-    # Set version text
-    version_text = '%(prog)s {version}'.format(version=__version__)
-    
-    parser.add_argument('-v', '--version', action='version', version=version_text, help='show program version')
-
-    parser.add_argument('url', metavar='URL', type=str, help='Video URL')
-
-    return parser.parse_args()
 
 def main():
     args = parse_arguments()
@@ -48,7 +28,7 @@ def main():
 
         print('Converting downloaded video to mp3...')
 
-        converter.convert_audio_stream(downloader.title)
+        converter.convert_audio_stream(downloader.filename)
 
         print('Done! File saved to your home directory.')
     except ValueError as err:
