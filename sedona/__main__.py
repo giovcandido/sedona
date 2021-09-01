@@ -23,13 +23,7 @@ def main():
             print('Downloading "%s"...' % (video.title))
 
             video_path = video.download_audio_stream()
-        except ValueError as err:
-            print(err)
-
-            exit(1)
-        
-        # Video converter
-        try:
+            
             # Get video and convert it to mp3 to sedona directory
             converter = Converter(video_path)
 
@@ -47,9 +41,9 @@ def main():
             # Playlist downloader
             playlist = Playlist(video_url)
             
-            print('Downloading Playlist "%s"...' % (playlist.title))
+            print('Downloading and Converting Playlist "%s"...' % (playlist.title))
 
-            # Every object in "video_urls" of a Playlist is a URL of Youtube
+            # Every object "video_url" of a Playlist is a URL of Youtube
             for position, video_url in enumerate(playlist):
                 # Download youtube video to temp directory
                 video = Video(video_url)
@@ -63,6 +57,7 @@ def main():
                 # Download the track
                 video_path = video.download_audio_stream(track_number)
 
+                # Get video and convert it to mp3 to sedona directory
                 converter = Converter(video_path)
 
                 print('Converting downloaded video to mp3...')
@@ -70,6 +65,8 @@ def main():
                 converter.convert_audio_stream(track_number + video.filename)
 
                 print('Done! File saved to your home directory.')
+
+            print('\nPlaylist "%s" downloaded and converted with success!' % (playlist.title))
         except ValueError as err:
             print(err)
 
