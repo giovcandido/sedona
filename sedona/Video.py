@@ -43,7 +43,7 @@ class Video:
 
         self.__audio_stream = youtube.streams.get_audio_only()
 
-    def download_audio_stream(self, track_number = ""):
+    def download_audio_stream(self):
         temp_dir = gettempdir()
 
         temp_dir = path.join(temp_dir, 'Sedona')
@@ -51,7 +51,7 @@ class Video:
         if not path.exists(temp_dir):
             mkdir(temp_dir)
 
-        filename = track_number + self.__audio_stream.default_filename
+        filename = self.__audio_stream.default_filename
         
         output_file = path.join(temp_dir, filename)
         
