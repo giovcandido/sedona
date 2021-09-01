@@ -47,3 +47,8 @@ def on_download_progress(stream, chunk, bytes_remaining):
 
 def on_download_complete(stream, file_path):
     print()
+
+def print_separator():
+    separator = '\n' + get_terminal_size().columns * '-' + '\n'
+
+    print(separator)

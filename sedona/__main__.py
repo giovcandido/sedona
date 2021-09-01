@@ -1,6 +1,6 @@
 from sys import exit as sys_exit
 
-from .cli import parse_arguments
+from .cli import parse_arguments, print_separator
 
 from .Video import Video
 from .Playlist import Playlist
@@ -47,8 +47,12 @@ def handle_video(url):
     try:
         # Create video instance with the current url
         video = Video(url)
+
+        print('Video title: %s' % (video.title))
+        print('Duration: %s seconds' % (video.duration))
+        print('Youtube channel: %s\n' % (video.channel))
     
-        print('Downloading "%s"...' % (video.title))
+        print('Downloading audio-only video...')
 
         # Download audio only video to the tmp directory
         video_path = video.download_audio_stream()
@@ -61,7 +65,10 @@ def handle_video(url):
         # Get downloaded video and convert it to mp3, store it in home/SedonaMP3
         converter.convert_audio_stream(video.filename) # default bitrate = 256kbps
 
-        print('Done! File saved to your home directory.\n')
+        print('Done! File saved to your home directory.')
+
+        print_separator()
+
     except Exception as err:
         print(err)
         sys_exit(1)
