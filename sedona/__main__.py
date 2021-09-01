@@ -13,6 +13,7 @@ def main():
 
     urls = list()
 
+    # Checking if the URL is text file or not
     if args.url.endswith('.txt'):
         try:
             text_file = args.url
@@ -26,6 +27,7 @@ def main():
     else:
         urls.append(args.url)
     
+    # Downloading multiple url's
     for url in urls:
         # Checking if the URL is a video or a playlist
         if "playlist" not in url:
