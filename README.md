@@ -34,8 +34,15 @@ sedona [youtube_url]
 
 # Example
 As an example, you can run:
+
+* For bash, cmd/Powershell (Windows) and alike:
 ```bash
 sedona "https://www.youtube.com/watch?v=ifGUT86tGz4"
+```
+
+* For zshell and alike:
+```bash
+sedona https://www.youtube.com/watch?v=ifGUT86tGz4
 ```
 
 If you'd like to know more information about Sedona, run:
@@ -46,4 +53,4 @@ sedona --help
 # Contribute
 Feel free to reach out and contribute. We can add more features to Sedona and maybe implement our own backend.
 
-You can also help me test it on Windows and MacOS.
+You can also help me test it on MacOS.
