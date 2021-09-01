@@ -9,10 +9,21 @@ from .Converter import Converter
 def main():
     args = parse_arguments()
 
-    # Checking if the argument is related to a text file
+    urls = list()
 
-    urls = args.urls
+    if args.url.endswith('.txt'):
+        try:
+            text_file = args.url
 
+            with open(text_file) as f:
+                urls = f.readlines()
+        except FileNotFoundError as err:
+            print(err)
+
+            sys_exit(1)
+    else:
+        urls.append(args.url)
+    
     for url in urls:
         # Checking if the URL is a video or a playlist
         if "playlist" not in url:

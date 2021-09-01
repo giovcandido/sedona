@@ -11,14 +11,14 @@ def parse_arguments():
     figlet = Figlet(font='standard')
     print(figlet.renderText('Sedona'))
 
-    parser = ArgumentParser(description=__description__)
-    
+    parser =  ArgumentParser(description=__description__)
+
+    parser.add_argument('url', metavar='url', type=str, help='video/playlist url or text file with urls')
+
     # Set version text
     version_text = '%(prog)s {version}'.format(version=__version__)
     
     parser.add_argument('-v', '--version', action='version', version=version_text, help='show program version')
-
-    parser.add_argument('urls', metavar='URLs', type=str, nargs='+', help='Video/Playlist URLs')
 
     return parser.parse_args()
 
