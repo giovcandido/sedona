@@ -1,1 +1,1 @@
-__author_email__ = 'giovcandido@outlook.com'
+__author_email__ = 'giovcandido@outlook.com, davivirgula@gmail.com'

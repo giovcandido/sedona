@@ -1,1 +1,1 @@
-__author__ = 'Giovani Candido'
+__author__ = 'Giovani Candido, Davi Neves'
