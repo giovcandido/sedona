@@ -4,6 +4,8 @@ from pyfiglet import Figlet
 
 from shutil import get_terminal_size
 
+from sys import stdout
+
 from .version import __version__
 from .description import __description__
 
@@ -41,4 +43,8 @@ def on_download_progress(stream, chunk, bytes_remaining):
     # Calculte downloaded percentage
     percentage = round(100.0 * bytes_received / float(file_size), 1)
     
-    print('[%s] %.2f%%' % (progress_bar, percentage))
+    # Print progress bar
+    print('[%s] %.2f%%' % (progress_bar, percentage), end='\r')
+
+def on_download_complete(stream, file_path):
+    print()

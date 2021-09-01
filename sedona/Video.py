@@ -4,7 +4,7 @@ from tempfile import gettempdir
 
 from os import path, mkdir, remove
 
-from .cli import on_download_progress
+from .cli import on_download_progress, on_download_complete
 
 class Video:
 
@@ -36,7 +36,10 @@ class Video:
         return path.splitext(basename)[0]
     
     def __create_audio_stream(self):
-        youtube = YouTube(self.__url, on_progress_callback=on_download_progress)
+        youtube = YouTube(self.__url)
+
+        youtube.register_on_progress_callback(on_download_progress)
+        youtube.register_on_complete_callback(on_download_complete)
 
         self.__audio_stream = youtube.streams.get_audio_only()
 
