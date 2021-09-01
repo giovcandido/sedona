@@ -30,18 +30,26 @@ class Video:
         return self.__audio_stream.title
     
     @property
+    def duration(self):
+        return self.__youtube.length
+    
+    @property
+    def channel(self):
+        return self.__youtube.author
+    
+    @property
     def filename(self):
         basename = self.__audio_stream.default_filename
 
         return path.splitext(basename)[0]
     
     def __create_audio_stream(self):
-        youtube = YouTube(self.__url)
+        self.__youtube = YouTube(self.__url)
 
-        youtube.register_on_progress_callback(on_download_progress)
-        youtube.register_on_complete_callback(on_download_complete)
+        self.__youtube.register_on_progress_callback(on_download_progress)
+        self.__youtube.register_on_complete_callback(on_download_complete)
 
-        self.__audio_stream = youtube.streams.get_audio_only()
+        self.__audio_stream = self.__youtube.streams.get_audio_only()
 
     def download_audio_stream(self):
         temp_dir = gettempdir()
