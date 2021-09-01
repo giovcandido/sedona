@@ -1,5 +1,7 @@
 from pytube import Playlist as PytubePlaylist
 
+from pytube.helpers import safe_filename
+
 class Playlist:
 
     def __init__(self, url = None):
@@ -22,6 +24,16 @@ class Playlist:
     @property
     def title(self):
         return self.__playlist.title
+    
+    @property
+    def directory_name(self):
+        # Create safe_filename from playlist title
+        directory_name = safe_filename(self.__playlist.title)
+
+        # Remove trailing characters from beginning and end of playlist_dir
+        directory_name = directory_name.lstrip().rstrip()
+
+        return directory_name
     
     def __create_playlist(self):
         self.__playlist = PytubePlaylist(self.__url)
