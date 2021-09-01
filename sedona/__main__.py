@@ -43,35 +43,34 @@ def main():
             
             exit(1)
     else:
-        # Playlist downloader
         try:
+            # Playlist downloader
             playlist = Playlist(video_url)
-
-            print('Download Playlist "%s"...' % (playlist.title))
-
-            title_tracks, playlist_path = playlist.download_all()
-        except ValueError as err:
-            print(err)
-
-            exit(1)
-        
-        # Playlist converter
-        try:
-            print('\nConverting Playlist "%s"...' % (playlist.title))
             
-            # Get video from playlist and convert it to mp3 to sedona directory
-            for position, video_path in enumerate(playlist_path):
-                print("\nTitle: " + title_tracks[position])
+            print('Downloading Playlist "%s"...' % (playlist.title))
+
+            # Every object in "video_urls" of a Playlist is a URL of Youtube
+            for position, video_url in enumerate(playlist):
+                # Download youtube video to temp directory
+                video = Video(video_url)
+
+                track_number = str((position + 1)) + "." + " "
+
+                # Showing the track position and his title
+                print("\nPosition: " + str((position + 1)))
+                print("Title: " + video.filename)
+                
+                # Download the track
+                video_path = video.download_audio_stream(track_number)
 
                 converter = Converter(video_path)
 
                 print('Converting downloaded video to mp3...')
 
-                converter.convert_audio_stream(title_tracks[position])
+                converter.convert_audio_stream(track_number + video.filename)
 
                 print('Done! File saved to your home directory.')
         except ValueError as err:
             print(err)
 
             exit(1)
-
