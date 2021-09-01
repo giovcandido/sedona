@@ -8,7 +8,12 @@ from .Converter import Converter
 def main():
     args = parse_arguments()
 
+    # Checking if the argument is related to a text file
+
     video_url = args.url
+
+    # Checking if the URL is a video or a playlist
+
 
     # Download youtube video to temp directory
     try:
