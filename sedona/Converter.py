@@ -15,7 +15,7 @@ class Converter:
     def path(self, path):
         self.__path = path
 
-    def convert_audio_stream(self, title):
+    def convert_audio_stream(self, title, playlist_dir = None):
         audio_stream = AudioSegment.from_file(self.__path)
 
         sedona_dir = path.expanduser('~')
@@ -23,6 +23,12 @@ class Converter:
 
         if not path.exists(sedona_dir):
             mkdir(sedona_dir)
+
+        # Creating playlist folder if exists
+        if playlist_dir:
+            sedona_dir = path.join(sedona_dir, playlist_dir)
+            if not path.exists(sedona_dir):
+                mkdir(sedona_dir)
 
         output_file = path.join(sedona_dir, title) + '.mp3'
 
