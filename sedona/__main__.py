@@ -6,6 +6,8 @@ from .Video import Video
 from .Playlist import Playlist
 from .Converter import Converter
 
+from pytube.helpers import safe_filename
+
 def main():
     args = parse_arguments()
 
@@ -32,7 +34,7 @@ def main():
 
                 converter.convert_audio_stream(video.filename)
 
-                print('Done! File saved to your home directory.')
+                print('Done! File saved to your home directory.\n')
             except Exception as err:
                 print(err)
 
@@ -42,7 +44,7 @@ def main():
                 # Playlist downloader
                 playlist = Playlist(url)
                 
-                print('Downloading and Converting Playlist "%s"...' % (playlist.title))
+                print('Downloading and Converting Playlist "%s"...\n' % (playlist.title))
 
                 # Every object "video_url" of a Playlist is a URL of Youtube
                 for position, video_url in enumerate(playlist):
@@ -52,23 +54,30 @@ def main():
                     track_number = str((position + 1)) + "." + " "
 
                     # Showing the track position and his title
-                    print("\nPosition: " + str((position + 1)))
+                    print("Position: " + str((position + 1)))
                     print("Title: " + video.filename)
                     
                     # Download the track
                     video_path = video.download_audio_stream(track_number)
 
-                    # Get video and convert it to mp3 to sedona directory
+                    # Get video and convert it to mp3 to playlist directory, in sedona directory
+                    playlist_dir = safe_filename(playlist.title)
+
+                    # Remove whitespaces from init and end of string
+                    playlist_dir = playlist_dir.lstrip()
+                    playlist_dir = playlist_dir.rstrip()
+
                     converter = Converter(video_path)
 
                     print('Converting downloaded video to mp3...')
 
-                    converter.convert_audio_stream(track_number + video.filename)
+                    converter.convert_audio_stream(track_number + video.filename, playlist_dir)
 
-                    print('Done! File saved to your home directory.')
+                    print('Done! File saved to your home directory.\n')
 
-                print('\nPlaylist "%s" downloaded and converted with success!' % (playlist.title))
-            except ValueError as err:
+                print('Playlist "%s" downloaded and converted with success!\n' % (playlist.title))
+            except Exception as err:
                 print(err)
 
                 sys_exit(1)
+            
