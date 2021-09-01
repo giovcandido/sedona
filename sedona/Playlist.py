@@ -24,7 +24,11 @@ class Playlist:
     @property
     def title(self):
         return self.__playlist.title
-    
+
+    @property
+    def size(self):
+        return self.__playlist.length
+
     @property
     def directory_name(self):
         # Create safe_filename from playlist title
