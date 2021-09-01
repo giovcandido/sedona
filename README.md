@@ -41,7 +41,7 @@ sedona "https://www.youtube.com/watch?v=ifGUT86tGz4"
 ```
 
 * For zshell and alike:
-```bash
+```
 sedona https://www.youtube.com/watch?v=ifGUT86tGz4
 ```
 
