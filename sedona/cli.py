@@ -13,6 +13,7 @@ def parse_arguments():
 
     parser =  ArgumentParser(description=__description__)
 
+    # Add the URL argument, for a video/playlist (one URL) or a text file (multiple URL's)
     parser.add_argument('url', metavar='url', type=str, help='video/playlist url or text file with urls')
 
     # Set version text
