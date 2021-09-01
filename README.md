@@ -2,6 +2,8 @@
 
 [![PyPI][pypi-badge]][pypi-link]
 [![PyPI - Downloads][install-badge]][install-link]
+[![PyPI - License][license-badge]][license-link]
+[![PyPI - Status][status-badge]][status-link]
 
 Sedona is a free youtube mp3 downloader made with Python.
 
@@ -62,5 +64,9 @@ You can also help me test it on MacOS.
 
 [pypi-badge]: https://img.shields.io/pypi/v/sedona.svg
 [pypi-link]: https://pypi.org/project/sedona
-[install-badge]: https://img.shields.io/pypi/dw/sedona?label=pypi%20installs
+[install-badge]: https://img.shields.io/pypi/dm/sedona?label=pypi%20installs
 [install-link]: https://pypistats.org/packages/sedona
+[license-badge]: https://img.shields.io/pypi/l/sedona.svg
+[license-link]: https://pypi.python.org/pypi/sedona/
+[status-badge]: https://img.shields.io/pypi/status/sedona.svg
+[status-link]: https://pypi.python.org/pypi/sedona/
