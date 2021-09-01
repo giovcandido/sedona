@@ -39,7 +39,7 @@ class Playlist:
             # Download youtube video to temp directory
             video = Video(video_url)
 
-            track_number = str((position + 1)) + ". "
+            track_number = str((position + 1)) + "." + " "
 
             # Showing the track position and his title
             print("\nPosition: " + str((position + 1)))
