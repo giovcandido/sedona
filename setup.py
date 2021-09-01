@@ -25,11 +25,11 @@ with open("requirements.txt", encoding='utf-8') as f:
 # Configure setup 
 setup(
     name = 'sedona',
-    version = __version__,
-    author = __author__,
-    author_email = __author_email__,
+    version = __version__, # type: ignore
+    author = __author__, # type: ignore
+    author_email = __author_email__, # type: ignore
     license = 'GNU General Public License v3.0',
-    description = __description__,
+    description = __description__, # type: ignore
     long_description = long_description,
     long_description_content_type = 'text/markdown',
     url = 'https://github.com/giovcandido/sedona',
