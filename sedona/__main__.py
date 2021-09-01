@@ -6,99 +6,98 @@ from .Video import Video
 from .Playlist import Playlist
 from .Converter import Converter
 
-from pytube.helpers import safe_filename
-
 def main():
-    # Getting proper arguments from the terminal
+    # Get user arguments from sedona command
     args = parse_arguments()
 
-    # Creating a list with multiples urls (if exists)
+    # Create a list to store the urls
     urls = list()
 
-    # Checking if the URL is text file or not
+    # Check if it's necessary to read urls from text file
     if args.url.endswith('.txt'):
-        try:
-            # If its a text file, save all URL's in the variable for later download and conversion
-            text_file = args.url
-
-            with open(text_file) as f:
-                urls = f.readlines()
-        except FileNotFoundError as err:
-            print(err)
-
-            sys_exit(1)
+        # If it is, then read it from file
+        urls = read_from_file(args.url)
     else:
-        # If isn't a text file, save all URL's present in the arguments from terminal
+        # Otherwise, it's a single url, store it in the list
         urls.append(args.url)
     
-    # Downloading multiple url's
+    # Walk through urls list downloading and converting the corresponding videos
     for url in urls:
-        # Checking if the URL is a video or a playlist
+        # Check if the url is a video
         if "playlist" not in url:
-            # Video downloader
-            try:
-                # Download youtube video to temp directory
-                video = Video(url)
-            
-                print('Downloading "%s"...' % (video.title))
-
-                # Download the song in video format and return the correct path for conversion
-                video_path = video.download_audio_stream()
-                
-                # Get video path and convert it to mp3 to "sedonaMP3" directory in home
-                converter = Converter(video_path)
-
-                print('Converting downloaded video to mp3...')
-
-                # Convert the song to MP3, with a default bitrate of 256kbps
-                converter.convert_audio_stream(video.filename)
-
-                print('Done! File saved to your home directory.\n')
-            except Exception as err:
-                print(err)
-
-                sys_exit(1)
+            # If so, let's download and convert it
+            handle_video(url)
         else:
-            try:
-                # Playlist downloader
-                playlist = Playlist(url)
-                
-                print('Downloading and Converting Playlist "%s"...\n' % (playlist.title))
+            # Otherwise, let's download and convert a playlist
+            handle_playlist(url)
 
-                # Every object "video_url" of a Playlist is a URL of Youtube
-                for position, video_url in enumerate(playlist):
-                    # Download youtube video to temp directory
-                    video = Video(video_url)
+def read_from_file(filename):
+    urls = None
 
-                    track_number = str((position + 1)) + "." + " "
+    try:
+        with open(filename) as f:
+            urls = f.readlines()
+    except FileNotFoundError as err:
+        print(err)
+        sys_exit(1)
+    
+    return urls
 
-                    # Showing the track position and his title
-                    print("Position: " + str((position + 1)))
-                    print("Title: " + video.filename)
-                    
-                    # Download the song in video format, with the track number in playlist, and return the correct path for conversion
-                    video_path = video.download_audio_stream(track_number)
+def handle_video(url):
+    try:
+        # Create video instance with the current url
+        video = Video(url)
+    
+        print('Downloading "%s"...' % (video.title))
 
-                    # Update the playlist name to one allowed by the OS ("safe_filename"), upon creation of the specific directory
-                    playlist_dir = safe_filename(playlist.title)
+        # Download audio only video to the tmp directory
+        video_path = video.download_audio_stream()
+        
+        # Create converter instance with the video path
+        converter = Converter(video_path)
 
-                    # Remove whitespaces from init and end of string
-                    playlist_dir = playlist_dir.lstrip()
-                    playlist_dir = playlist_dir.rstrip()
+        print('Converting downloaded video to mp3...')
 
-                    # Get video path and convert it to mp3 to playlist directory, in "sedonaMP3" directory
-                    converter = Converter(video_path)
+        # Get downloaded video and convert it to mp3, store it in home/SedonaMP3
+        converter.convert_audio_stream(video.filename) # default bitrate = 256kbps
 
-                    print('Converting downloaded video to mp3...')
+        print('Done! File saved to your home directory.\n')
+    except Exception as err:
+        print(err)
+        sys_exit(1)
 
-                    # Convert the song to MP3, with his track number and a default bitrate of 256kbps
-                    converter.convert_audio_stream(track_number + video.filename, playlist_dir)
+def handle_playlist(url):
+    try:
+        # Create playlist instance with current url
+        playlist = Playlist(url)
+        
+        print('=> Current playlist is "%s".\n' % (playlist.title))
 
-                    print('Done! File saved to your home directory.\n')
-
-                print('Playlist "%s" downloaded and converted with success!\n' % (playlist.title))
-            except Exception as err:
-                print(err)
-
-                sys_exit(1)
+        # Walk through all urls of the playlist                
+        for number, video_url in enumerate(playlist):
+            # Create video instance with the curl
+            video = Video(video_url)
             
+            # Show track number and its title
+            print('Downloading "%s"...' % (video.title))
+            
+            # Download audio only video to the tmp directory
+            video_path = video.download_audio_stream()
+
+            # Create converter instance with the video path
+            converter = Converter(video_path)
+
+            print('Converting downloaded video to mp3...')
+            
+            # Add track number to filename
+            filename = str((number + 1)) + "." + " " + video.filename
+
+            # Get downloaded video and convert it to mp3, store it in home/SedonaMP3
+            converter.convert_audio_stream(filename, playlist.directory_name) # default bitrate = 256kbps
+
+            print('Done! File saved to your home directory.\n')
+
+        print('=> Playlist "%s" downloaded successfully.\n' % (playlist.title))
+    except Exception as err:
+        print(err)
+        sys_exit(1)
