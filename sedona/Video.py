@@ -6,13 +6,13 @@ from os import path, mkdir, remove
 
 from .cli import on_download_progress
 
-class Downloader:
+class Video:
 
     def __init__(self, url = None):
         self.__url = url
 
         if self.__url is not None:
-            self.__create_video()
+            self.__create_audio_stream()
 
     @property
     def url(self):  
@@ -23,20 +23,22 @@ class Downloader:
         self.__url = url
 
         if url is not None:
-            self.__create_video()
+            self.__create_audio_stream()
 
     @property
     def title(self):
-        return self.__video.title
+        return self.__audio_stream.title
     
     @property
     def filename(self):
-        return path.splitext(self.__video.default_filename)[0]
+        basename = self.__audio_stream.default_filename
+
+        return path.splitext(basename)[0]
     
-    def __create_video(self):
+    def __create_audio_stream(self):
         youtube = YouTube(self.__url, on_progress_callback=on_download_progress)
 
-        self.__video = youtube.streams.get_audio_only()
+        self.__audio_stream = youtube.streams.get_audio_only()
 
     def download_audio_stream(self):
         temp_dir = gettempdir()
@@ -46,11 +48,13 @@ class Downloader:
         if not path.exists(temp_dir):
             mkdir(temp_dir)
 
-        output_file = path.join(temp_dir, self.__video.default_filename)
+        filename = self.__audio_stream.default_filename
+
+        output_file = path.join(temp_dir, filename)
         
         if path.exists(output_file):
             remove(output_file)
 
-        self.__video.download(output_path=temp_dir)
+        self.__audio_stream.download(output_path=temp_dir)
 
         return output_file

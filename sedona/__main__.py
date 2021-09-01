@@ -2,7 +2,7 @@ from sys import exit
 
 from .cli import parse_arguments
 
-from .Downloader import Downloader
+from .Video import Video
 from .Converter import Converter
 
 def main():
@@ -12,11 +12,11 @@ def main():
 
     # Download youtube video to temp directory
     try:
-        downloader = Downloader(video_url)
+        video = Video(video_url)
     
-        print('Downloading %s...' % (downloader.title))
+        print('Downloading %s...' % (video.title))
 
-        video_path = downloader.download_audio_stream()
+        video_path = video.download_audio_stream()
     except ValueError as err:
         print(err)
 
@@ -28,7 +28,7 @@ def main():
 
         print('Converting downloaded video to mp3...')
 
-        converter.convert_audio_stream(downloader.filename)
+        converter.convert_audio_stream(video.filename)
 
         print('Done! File saved to your home directory.')
     except ValueError as err:
