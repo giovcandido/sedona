@@ -4,8 +4,6 @@ from pyfiglet import Figlet
 
 from shutil import get_terminal_size
 
-from sys import stdout
-
 from .version import __version__
 from .description import __description__
 
@@ -20,7 +18,7 @@ def parse_arguments():
     
     parser.add_argument('-v', '--version', action='version', version=version_text, help='show program version')
 
-    parser.add_argument('url', metavar='URL', type=str, help='Video URL')
+    parser.add_argument('urls', metavar='URLs', type=str, nargs='+', help='Video/Playlist URLs')
 
     return parser.parse_args()
 
