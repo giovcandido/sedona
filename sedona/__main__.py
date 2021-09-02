@@ -1,6 +1,6 @@
 from sys import exit as sys_exit
 
-from .cli import parse_arguments, print_separator
+from .cli import parse_arguments, print_separator, print_arrow_message
 
 from .Video import Video
 from .Playlist import Playlist
@@ -51,9 +51,9 @@ def handle_video(url, position, size_urls):
         video = Video(url)
 
         # Show some informations about track
-        print('Video title: %s' % (video.title))
-        print('Duration: %s' % (video.duration))
-        print('Youtube channel: %s\n' % (video.channel))
+        print(f'Video title: {video.title}')
+        print(f'Duration: {video.duration}')
+        print(f'Youtube channel: {video.channel}\n')
     
         print('Downloading audio-only video...')
 
@@ -82,8 +82,8 @@ def handle_playlist(url, position, size_urls):
     try:
         # Create playlist instance with current url
         playlist = Playlist(url)
-
-        print('=> Current playlist is "%s".\n' % (playlist.title))
+        
+        print_arrow_message(f'Current playlist is "{playlist.title}".\n')
 
         # Walk through all urls of the playlist                
         for number, video_url in enumerate(playlist):
@@ -91,10 +91,10 @@ def handle_playlist(url, position, size_urls):
             video = Video(video_url)
             
             # Show some informations about track
-            print('Track number: %s' % str((number + 1)))
-            print('Video title: %s' % (video.title))
-            print('Duration: %s' % (video.duration))
-            print('Youtube channel: %s\n' % (video.channel))
+            print(f'Track number: {str((number + 1))}')
+            print(f'Video title: {video.title}')
+            print(f'Duration: {video.duration}')
+            print(f'Youtube channel: {video.channel}\n')
 
             print('Downloading audio-only video...')
             
@@ -118,7 +118,7 @@ def handle_playlist(url, position, size_urls):
             if number < playlist.size - 1:
                 print_separator()
 
-        print('\n=> Playlist "%s" downloaded successfully.' % (playlist.title))
+        print_arrow_message(f'Playlist "{playlist.title}" downloaded successfully.', '\n')
 
         # Don't print the separator in the last element
         if position < size_urls - 1:
