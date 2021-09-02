@@ -7,14 +7,23 @@
 
 Download all your favorite songs with an easy-to-use cli tool.
 
-It's been made with Python 3.8 and tested on Linux and Windows 10.
+## Contents
 
-## Features
+- [About](#about)
+- [Usage](#usage)
+- [Example](#example)
+- [Requirements](#requirements)
+- [Installation](#installation)
+- [Contribute](#contribute)
+
+## About
 
 - Best YouTube to MP3 Converter with 256kbps high quality audio!
 - Free and unlimited conversions and downloads!
 - Support YouTube Video, YouTube Playlist and a text file with many links as you wish!
 - Most platforms supported including Windows, Mac and Linux!
+
+It's been made with Python 3.8 and tested on Linux and Windows 10.
 
 ## Usage
 In order to use Sedona, go to your command line and type:
@@ -25,12 +34,12 @@ sedona [youtube_url]
 ## Example
 As an example, you can run:
 
-* For bash, cmd/Powershell (Windows) and alike:
+- For bash, cmd/Powershell (Windows) and alike:
 ```bash
 sedona "https://www.youtube.com/watch?v=ifGUT86tGz4"
 ```
 
-* For zshell and alike:
+- For zshell and alike:
 ```
 sedona https://www.youtube.com/watch?v=ifGUT86tGz4
 ```
