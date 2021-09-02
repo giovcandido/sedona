@@ -49,7 +49,7 @@ choco install ffmpeg
 
 Remember to open CMD or PowerShell as an administrator, or you can use [gsudo](https://github.com/gerardog/gsudo) as I do.
 
-You can also install it manually on MacOS or Windows. If you're on Windows, for example, [download](https://ffmpeg.org/download.html) it and follow a [guide](https://www.wikihow.com/Install-FFmpeg-on-Windows).
+You can also install it manually on MacOS or Windows. For Windows, [download](https://ffmpeg.org/download.html) it and follow a [guide](https://www.wikihow.com/Install-FFmpeg-on-Windows).
 
 # How to install
 There are two ways you can install Sedona. You can either install it from source or you can get it using pip.
