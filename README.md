@@ -1,11 +1,11 @@
-# Sedona
+# Sedona - a free youtube mp3 downloader for songs
 
 [![PyPI][pypi-badge]][pypi-link]
 [![PyPI - Downloads][install-badge]][install-link]
 [![PyPI - License][license-badge]][license-link]
 [![PyPI - Status][status-badge]][status-link]
 
-Sedona is a free youtube mp3 downloader made with Python.
+Download all your favorite songs with an easy-to-use cli tool.
 
 It's been made with Python 3.8 and tested on Linux and Windows 10.
 
