@@ -12,7 +12,44 @@ It's been made with Python 3.8 and tested on Linux and Windows 10.
 # Dependencies
 Check requirements.txt to see a complete list of dependencies. But, don't worry about them. They are automatically installed for you.
 
-The FFmpeg package is required for the MP3 conversion, you need to install it on your OS. If you're on Linux, you may not need to install it or you can do so through your package manager. If your on Windows, for example, follow some guide like [this one](https://www.wikihow.com/Install-FFmpeg-on-Windows).
+However, ffmpeg is required for the MP3 conversion, you need to install it on your OS. If you're on Linux, you may not need to install it or you can do so through your package manager. 
+
+If you're using a Debian-based distro, you can run:
+```bash
+sudo apt install ffmpeg 
+```
+
+If you're using a Fedora-based distro, you can run:
+```bash
+sudo dnf install ffmpeg 
+```
+
+If you're using an OpenSUSE-based distro, you can run:
+```bash
+sudo zypper in opi
+sudo opi codecs 
+```
+
+If you're using an Arch-based distro, you can run:
+```bash
+sudo pacman -S ffmpeg
+```
+
+Additionally, if you're using any another Linux OS, you can download the tar file [here](https://ffmpeg.org/download.html) or google how to install it in your distro.
+
+If you are a MacOS (or even a Linux) user, you can use [Homebrew](brew.sh) to install ffmpeg. Simply execute the following command:
+```bash
+brew install ffmpeg
+```
+
+In case you are a Windows user, you can use [Chocolatey](https://chocolatey.org/install) to install it by running the command:
+```bash
+choco install ffmpeg
+```
+
+Remember to open CMD or PowerShell as an administrator or you can use [gsudo](https://github.com/gerardog/gsudo) as I do.
+
+You can also download and install ffmpeg manually. If you're on Windows, for example, [download](https://ffmpeg.org/download.html) it and follow a [guide](https://www.wikihow.com/Install-FFmpeg-on-Windows).
 
 # How to install
 There are two ways you can install Sedona. You can either install it from source or you can get it using pip.
