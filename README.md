@@ -9,6 +9,13 @@ Sedona is a free youtube mp3 downloader made with Python.
 
 It's been made with Python 3.8 and tested on Linux and Windows 10.
 
+# Features
+
+- Best YouTube to MP3 Converter with 256kbps high quality audio!
+- Free and unlimited conversions and downloads!
+- Support YouTube Video, YouTube Playlist and a text file with many links as you wish!
+- Most platforms supported including Windows, Mac and Linux!
+
 # Usage
 In order to use Sedona, go to your command line and type:
 ```bash
