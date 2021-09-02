@@ -35,9 +35,9 @@ If you're using an Arch-based distro, you can run:
 sudo pacman -S ffmpeg
 ```
 
-Additionally, if you're using any another Linux OS, you can download the tar file [here](https://ffmpeg.org/download.html) or google how to install it in your distro.
+Additionally, if you're using any another Linux OS, you can download the tar file [here](https://ffmpeg.org/download.html) and install it manually.
 
-If you are a MacOS (or even a Linux) user, you can use [Homebrew](brew.sh) to install ffmpeg. Simply execute the following command:
+If you are a MacOS (or even a Linux) user, you can use [Homebrew](brew.sh) to install ffmpeg. Simply execute:
 ```bash
 brew install ffmpeg
 ```
@@ -47,9 +47,9 @@ In case you are a Windows user, you can use [Chocolatey](https://chocolatey.org/
 choco install ffmpeg
 ```
 
-Remember to open CMD or PowerShell as an administrator or you can use [gsudo](https://github.com/gerardog/gsudo) as I do.
+Remember to open CMD or PowerShell as an administrator, or you can use [gsudo](https://github.com/gerardog/gsudo) as I do.
 
-You can also download and install ffmpeg manually. If you're on Windows, for example, [download](https://ffmpeg.org/download.html) it and follow a [guide](https://www.wikihow.com/Install-FFmpeg-on-Windows).
+You can also install it manually on MacOS or Windows. If you're on Windows, for example, [download](https://ffmpeg.org/download.html) it and follow a [guide](https://www.wikihow.com/Install-FFmpeg-on-Windows).
 
 # How to install
 There are two ways you can install Sedona. You can either install it from source or you can get it using pip.
