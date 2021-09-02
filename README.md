@@ -1,4 +1,4 @@
-# Sedona - a free youtube mp3 downloader for songs
+# Sedona - a free YouTube mp3 downloader for songs
 
 [![PyPI][pypi-badge]][pypi-link]
 [![PyPI - Downloads][install-badge]][install-link]
@@ -22,10 +22,9 @@ Download all your favorite songs with an easy-to-use cli tool.
 
 ## About
 
-- Best YouTube to MP3 Converter with 256kbps high quality audio!
-- Free and unlimited conversions and downloads!
-- Support YouTube Video, YouTube Playlist and a text file with many links as you wish!
-- Most platforms supported including Windows, Mac and Linux!
+Sedona is cli tool that makes it easy to download YouTube videos and playlists and have them converted to mp3 format with 256kbps. You can use it directly with a video or playlist URL or you can create a text file with as many URLs as you want and have Sedona process it.
+
+Our tool is the best YouTube to MP3 Converter. You get free and unlimited downloads with high quality audio. Not only you can use it as much as you want, but you can also use it wherever you want: Sedona is cross-plataform and supports many operating system, such as Windows, Mac and Linux!
 
 It's been made with Python 3.8 and tested on Linux and Windows 10.
 
