@@ -6,7 +6,7 @@
 [![PyPI - Status][status-badge]][status-link]
 
 <p align="center">
-    <img src="/demos/playlist_download.gif" alt="Sedona downloading a playlist">
+    <img src="https://github.com/giovcandido/sedona/blob/master/demos/playlist_download.gif?raw=true" alt="Sedona downloading a playlist">
 </p>
 
 Download all your favorite songs with an easy-to-use cli tool.
@@ -92,7 +92,7 @@ sedona https://www.youtube.com/watch\?v\=ifGUT86tGz4
 ```
 
 <p align="center">
-    <img src="/demos/video_download.gif" alt="Sedona downloading a video">
+    <img src="https://github.com/giovcandido/sedona/blob/master/demos/video_download.gif?raw=true" alt="Sedona downloading a video">
 </p>
 
 ### Playlist download
@@ -105,7 +105,7 @@ sedona https://www.youtube.com/playlist\?list\=PLIUpNmqKloq8rO01g9ZR2VCe6KP1gyg7
 The mp3 files will be numbered according to the playlist ordering. Addionatilly, all files will be stored in a directory with the same name as the playlist. Actually, it's not always the same name, once we have to choose a safe name.
 
 <p align="center">
-    <img src="/demos/playlist_download.gif" alt="Sedona downloading a playlist">
+    <img src="https://github.com/giovcandido/sedona/blob/master/demos/playlist_download.gif?raw=true" alt="Sedona downloading a playlist">
 </p>
 
 ### Text file download
@@ -122,7 +122,7 @@ sedona urls.txt
 ```
 
 <p align="center">
-    <img src="/demos/text_download.gif" alt="Sedona downloading from a text file">
+    <img src="https://github.com/giovcandido/sedona/blob/master/demos/text_download.gif?raw=true" alt="Sedona downloading from a text file">
 </p>
 
 ### Output directory
@@ -130,7 +130,7 @@ sedona urls.txt
 The default output directory of Sedona is SedonaMP3, which is created automatically in your user directory. If you're on Linux, that's your home directory.
 
 <p align="center">
-    <img src="/demos/show_output.gif" alt="Showing output directory">
+    <img src="https://github.com/giovcandido/sedona/blob/master/demos/show_output.gif?raw=true" alt="Showing output directory">
 </p>
 
 ## Requirements
