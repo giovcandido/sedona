@@ -50,11 +50,9 @@ def handle_video(url, position, size_urls):
         # Create video instance with the current url
         video = Video(url)
 
-        # Duration of the video
-        minutes, seconds = divmod(video.duration, 60)
-
+        # Show some informations about track
         print('Video title: %s' % (video.title))
-        print(f'Duration: {minutes}:{seconds}')
+        print('Duration: %s' % (video.duration))
         print('Youtube channel: %s\n' % (video.channel))
     
         print('Downloading audio-only video...')
@@ -92,13 +90,10 @@ def handle_playlist(url, position, size_urls):
             # Create video instance with the curl
             video = Video(video_url)
             
-            # Duration of the video
-            minutes, seconds = divmod(video.duration, 60)
-
-            # Show track number and its title
+            # Show some informations about track
             print('Track number: %s' % str((number + 1)))
             print('Video title: %s' % (video.title))
-            print(f'Duration: {minutes}:{seconds}')
+            print('Duration: %s' % (video.duration))
             print('Youtube channel: %s\n' % (video.channel))
 
             print('Downloading audio-only video...')

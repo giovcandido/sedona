@@ -31,7 +31,15 @@ class Video:
     
     @property
     def duration(self):
-        return self.__youtube.length
+        m, s = divmod(self.__youtube.length, 60)
+        h, m = divmod(m, 60)
+
+        if(h > 0):
+            time = str(h) + ':' + str(m) + ':' + str(s)
+        else:
+            time = str(m) + ':' + str(s)
+
+        return time
     
     @property
     def channel(self):
