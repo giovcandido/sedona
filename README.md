@@ -9,6 +9,30 @@ Sedona is a free youtube mp3 downloader made with Python.
 
 It's been made with Python 3.8 and tested on Linux and Windows 10.
 
+# Usage
+In order to use Sedona, go to your command line and type:
+```bash
+sedona [youtube_url]
+```
+
+# Example
+As an example, you can run:
+
+* For bash, cmd/Powershell (Windows) and alike:
+```bash
+sedona "https://www.youtube.com/watch?v=ifGUT86tGz4"
+```
+
+* For zshell and alike:
+```
+sedona https://www.youtube.com/watch?v=ifGUT86tGz4
+```
+
+If you'd like to know more information about Sedona, run:
+```bash
+sedona --help
+```
+
 # Dependencies
 Check requirements.txt to see a complete list of dependencies. But, don't worry about them. They are automatically installed for you.
 
@@ -67,30 +91,6 @@ pip3 install sedona
 You can also run:
 ```bash
 sudo pip3 install sedona
-```
-
-# How to use
-In order to use Sedona, go to your command line and type:
-```bash
-sedona [youtube_url]
-```
-
-# Example
-As an example, you can run:
-
-* For bash, cmd/Powershell (Windows) and alike:
-```bash
-sedona "https://www.youtube.com/watch?v=ifGUT86tGz4"
-```
-
-* For zshell and alike:
-```
-sedona https://www.youtube.com/watch?v=ifGUT86tGz4
-```
-
-If you'd like to know more information about Sedona, run:
-```bash
-sedona --help
 ```
 
 # Contribute
