@@ -52,7 +52,17 @@ Now, all you have to do is:
 sedona [file_path]
 ```
 
-## Example
+In case you need it, there's a help option available:
+```bash
+sedona --help
+```
+
+Moreover, you can check the program version with:
+```bash
+sedona --version
+```
+
+## Demos
 
 As an example, you can run:
 
@@ -64,11 +74,6 @@ sedona "https://www.youtube.com/watch?v=ifGUT86tGz4"
 - For zshell and alike:
 ```
 sedona https://www.youtube.com/watch?v=ifGUT86tGz4
-```
-
-If you'd like to know more information about Sedona, run:
-```bash
-sedona --help
 ```
 
 ## Requirements
