@@ -64,17 +64,27 @@ sedona --version
 
 ## Demos
 
-As an example, you can run:
+It's important to note that the URL contains special characters and the shell may misinterpret it.
 
-- For bash, cmd/Powershell (Windows) and alike:
+Having said that, you should use quotation marks to prevent bad processing of the URLs.
+
+In order to download a video, you should run:
 ```bash
 sedona "https://www.youtube.com/watch?v=ifGUT86tGz4"
 ```
 
-- For zshell and alike:
+For Bash and PowerShell, the above choice is a good one. 
+
+However, if you use ZSH, you may not need to use quotation marks, because it's smart and will automatically use 'escapes'. You paste the URL into ZSH and you will have it like this:
+```bash
+sedona https://www.youtube.com/watch\?v\=ifGUT86tGz4
 ```
-sedona https://www.youtube.com/watch?v=ifGUT86tGz4
-```
+
+- Video download demo
+- Playlist download demo
+- Text download demo
+
+- Output directory in user directory (SedonaMP3)
 
 ## Requirements
 
@@ -94,7 +104,7 @@ sudo dnf install ffmpeg
 
 If you're using an OpenSUSE-based distro, you can run:
 ```bash
-sudo zypper in opi
+sudo zypper install opi
 sudo opi codecs 
 ```
 
