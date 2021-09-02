@@ -53,7 +53,7 @@ def handle_video(url, position, size_urls):
         # Show some informations about track
         print(f'Video title: {video.title}')
         print(f'Duration: {video.duration}')
-        print(f'Youtube channel: {video.channel}\n')
+        print(f'YouTube channel: {video.channel}\n')
     
         print('Downloading audio-only video...')
 
@@ -94,7 +94,7 @@ def handle_playlist(url, position, size_urls):
             print(f'Track number: {str((number + 1))}')
             print(f'Video title: {video.title}')
             print(f'Duration: {video.duration}')
-            print(f'Youtube channel: {video.channel}\n')
+            print(f'YouTube channel: {video.channel}\n')
 
             print('Downloading audio-only video...')
             
