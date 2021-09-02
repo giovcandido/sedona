@@ -2,8 +2,8 @@
 
 [![PyPI][pypi-badge]][pypi-link]
 [![PyPI - Downloads][install-badge]][install-link]
-[![PyPI - License][license-badge]][license-link]
 [![PyPI - Status][status-badge]][status-link]
+[![PyPI - License][license-badge]][license-link]
 
 <p align="center">
     <img src="https://github.com/giovcandido/sedona/blob/master/demos/playlist_download.gif?raw=true" alt="Sedona downloading a playlist">
