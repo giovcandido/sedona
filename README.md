@@ -9,20 +9,20 @@ Download all your favorite songs with an easy-to-use cli tool.
 
 It's been made with Python 3.8 and tested on Linux and Windows 10.
 
-# Features
+## Features
 
 - Best YouTube to MP3 Converter with 256kbps high quality audio!
 - Free and unlimited conversions and downloads!
 - Support YouTube Video, YouTube Playlist and a text file with many links as you wish!
 - Most platforms supported including Windows, Mac and Linux!
 
-# Usage
+## Usage
 In order to use Sedona, go to your command line and type:
 ```bash
 sedona [youtube_url]
 ```
 
-# Example
+## Example
 As an example, you can run:
 
 * For bash, cmd/Powershell (Windows) and alike:
@@ -40,7 +40,7 @@ If you'd like to know more information about Sedona, run:
 sedona --help
 ```
 
-# Dependencies
+## Requirements
 Check requirements.txt to see a complete list of dependencies. But, don't worry about them. They are automatically installed for you.
 
 However, ffmpeg is required for the MP3 conversion, you need to install it on your OS. If you're on Linux, you may not need to install it or you can do so through your package manager. 
@@ -82,7 +82,7 @@ Remember to open CMD or PowerShell as an administrator, or you can use [gsudo](h
 
 You can also install it manually on MacOS or Windows. For Windows, [download](https://ffmpeg.org/download.html) it and follow a [guide](https://www.wikihow.com/Install-FFmpeg-on-Windows).
 
-# How to install
+## Installation
 There are two ways you can install Sedona. You can either install it from source or you can get it using pip.
 
 If you want to get it from source, download the latest release on GitHub. Then, extract the source code and run:
@@ -100,7 +100,7 @@ You can also run:
 sudo pip3 install sedona
 ```
 
-# Contribute
+## Contribute
 Feel free to reach out and contribute. We can add more features to Sedona and maybe implement our own backend.
 
 You can also help me test it on MacOS.
