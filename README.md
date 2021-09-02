@@ -5,6 +5,10 @@
 [![PyPI - License][license-badge]][license-link]
 [![PyPI - Status][status-badge]][status-link]
 
+<p align="center">
+    <img src="/demos/playlist_download.gif" alt="Sedona downloading a playlist">
+</p>
+
 Download all your favorite songs with an easy-to-use cli tool.
 
 ## Contents
