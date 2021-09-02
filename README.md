@@ -41,7 +41,7 @@ sedona [playlist_url]
 ```
 
 If you wish to download multiple videos and playlists, you can create a text file like this one:
-```text
+```
 https://www.youtube.com/watch?v=11mk6T9Ws_I
 https://www.youtube.com/watch?v=Y8wifV5RYr8
 https://www.youtube.com/watch?v=U5oI8aoPhJs
@@ -76,15 +76,62 @@ sedona "https://www.youtube.com/watch?v=ifGUT86tGz4"
 For Bash and PowerShell, the above choice is a good one. 
 
 However, if you use ZSH, you may not need to use quotation marks, because it's smart and will automatically use 'escapes'. You paste the URL into ZSH and you will have it like this:
-```bash
+```
 sedona https://www.youtube.com/watch\?v\=ifGUT86tGz4
 ```
 
-- Video download demo
-- Playlist download demo
-- Text download demo
+### Video download
 
-- Output directory in user directory (SedonaMP3)
+I use ZSH, so I won't put quotation marks.
+
+Since the URLs have 'escapes' already, you must run without quotation marks as well.
+
+Let's execute:
+```
+sedona https://www.youtube.com/watch\?v\=ifGUT86tGz4
+```
+
+<p align="center">
+    <img src="/demos/video_download.gif" alt="Sedona downloading a video">
+</p>
+
+### Playlist download
+
+Now, let's download a playlist:
+```
+sedona https://www.youtube.com/playlist\?list\=PLIUpNmqKloq8rO01g9ZR2VCe6KP1gyg7V
+```
+
+The mp3 files will be numbered according to the playlist ordering. Addionatilly, all files will be stored in a directory with the same name as the playlist. Actually, it's not always the same name, once we have to choose a safe name.
+
+<p align="center">
+    <img src="/demos/playlist_download.gif" alt="Sedona downloading a playlist">
+</p>
+
+### Text file download
+
+Let's use a text file to download some videos.
+
+Create a text file 'urls.txt' as the one presented in the usage section.
+
+Note that the text file should have one URL per line and there's no need to use quotation marks.
+
+If you created the file in your currrent directory, execute:
+```
+sedona urls.txt
+```
+
+<p align="center">
+    <img src="/demos/text_download.gif" alt="Sedona downloading from a text file">
+</p>
+
+### Output directory
+
+The default output directory of Sedona is SedonaMP3, which is created automatically in your user directory. If you're on Linux, that's your home directory.
+
+<p align="center">
+    <img src="/demos/show_output.gif" alt="Showing output directory">
+</p>
 
 ## Requirements
 
