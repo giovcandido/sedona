@@ -29,12 +29,31 @@ Our tool is the best YouTube to MP3 Converter. You get free and unlimited downlo
 It's been made with Python 3.8 and tested on Linux and Windows 10.
 
 ## Usage
-In order to use Sedona, go to your command line and type:
+
+In order to download a YouTube video with Sedona, go to your command line and execute:
 ```bash
-sedona [youtube_url]
+sedona [video_url]
+```
+
+If you want to download a playlist, you can also do as explained above:
+```bash
+sedona [playlist_url]
+```
+
+If you wish to download multiple videos and playlists, you can create a text file like this one:
+```text
+https://www.youtube.com/watch?v=11mk6T9Ws_I
+https://www.youtube.com/watch?v=Y8wifV5RYr8
+https://www.youtube.com/watch?v=U5oI8aoPhJs
+```
+
+Now, all you have to do is:
+```bash
+sedona [file_path]
 ```
 
 ## Example
+
 As an example, you can run:
 
 - For bash, cmd/Powershell (Windows) and alike:
@@ -53,6 +72,7 @@ sedona --help
 ```
 
 ## Requirements
+
 Check requirements.txt to see a complete list of dependencies. But, don't worry about them. They are automatically installed for you.
 
 However, ffmpeg is required for the MP3 conversion, you need to install it on your OS. If you're on Linux, you may not need to install it or you can do so through your package manager. 
@@ -95,6 +115,7 @@ Remember to open CMD or PowerShell as an administrator, or you can use [gsudo](h
 You can also install it manually on MacOS or Windows. For Windows, [download](https://ffmpeg.org/download.html) it and follow a [guide](https://www.wikihow.com/Install-FFmpeg-on-Windows).
 
 ## Installation
+
 There are two ways you can install Sedona. You can either install it from source or you can get it using pip.
 
 If you want to get it from source, download the latest release on GitHub. Then, extract the source code and run:
@@ -113,6 +134,7 @@ sudo pip3 install sedona
 ```
 
 ## Contribute
+
 Feel free to reach out and contribute. We can add more features to Sedona and maybe implement our own backend.
 
 You can also help me test it on MacOS.
