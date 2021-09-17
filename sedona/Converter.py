@@ -5,12 +5,13 @@ from sys import exit as sys_exit
 with catch_warnings(record=True) as w:
     from pydub import AudioSegment
 
-    warning_message = str(w[-1].message)
+    if bool(w):
+        warning_message = str(w[-1].message)
 
-    if 'ffmpeg' in warning_message and 'avconv' in warning_message:
-        print('[Warning] You need to install ffmpeg package in your system.')
-        print('For more information, check our repository:')
-        print('https://github.com/giovcandido/sedona')
+        if 'ffmpeg' in warning_message and 'avconv' in warning_message:
+            print('[Warning] You need to install ffmpeg package in your system.')
+            print('For more information, check our repository:')
+            print('https://github.com/giovcandido/sedona')
 
 from os import path, mkdir
 
