@@ -178,7 +178,7 @@ You can also install it manually on MacOS or Windows. For Windows, [download](ht
 
 ## Installation
 
-There are two ways you can install Sedona. You can either install it from source or you can get it using pip.
+There is more than one way to install Sedona. You can install it from source, you can get it using pip or you can download the official rpm/deb.
 
 If you want to get it from source, download the latest release on GitHub. Then, extract the source code and run:
 ```bash
@@ -194,6 +194,52 @@ You can also run:
 ```bash
 sudo pip3 install sedona
 ```
+
+Additionally, if you want to download our official rpm, check out the releases in our GitHub repository.
+
+Once you have the rpm, you can install it with your package manager.
+
+If you're using a Fedora-based distro, you can run:
+```bash
+sudo dnf install [path-to-rpm/file.rpm]
+```
+
+If you're using an OpenSUSE-based distro, you can run:
+```bash
+sudo zypper install [path-to-rpm/file.rpm]
+```
+
+You can also install it with:
+```bash
+sudo rpm -i [path-to-rpm/file.rpm]
+```
+
+On the other hand, the official deb package is also available in our releases.
+
+In order to install it, run:
+```bash
+sudo apt install [path-to-deb/file.deb]
+```
+
+You can also install it with:
+```bash
+sudo dpkg -i [path-to-deb/file.deb]
+```
+
+Our rpm/deb packages are properly signed with gpg2.
+
+## Troubleshooting
+
+Installing Sedona via pip and then installing it via rpm may leave you with two different versions of it.
+
+This may lead to an error when executing Sedona, since there would be conflicting data.
+
+In this case, run:
+```bash
+locate --all "sedona" 
+```
+
+Look for '-py3.8.egg-info' in the output. If there's more than one directory with this pattern, remove the one corresponding to the unwanted version.
 
 ## Contribute
 
