@@ -42,9 +42,9 @@ sedona [playlist_url]
 
 If you wish to download multiple videos and playlists, you can create a text file like this one:
 ```
-https://www.youtube.com/watch?v=11mk6T9Ws_I
-https://www.youtube.com/watch?v=Y8wifV5RYr8
-https://www.youtube.com/watch?v=U5oI8aoPhJs
+https://www.youtube.com/watch?v=MktSE45zlrI
+https://www.youtube.com/watch?v=zyXmsVwZqX4
+https://www.youtube.com/watch?v=3nQNiWdeH2Q
 ```
 
 Now, all you have to do is:
@@ -70,14 +70,14 @@ Having said that, you should use quotation marks to prevent bad processing of th
 
 In order to download a video, you should run:
 ```bash
-sedona "https://www.youtube.com/watch?v=ifGUT86tGz4"
+sedona "https://www.youtube.com/watch?v=MktSE45zlrI"
 ```
 
 For Bash and PowerShell, the above choice is a good one. 
 
 However, if you use ZSH, you may not need to use quotation marks, because it's smart and will automatically use 'escapes'. You paste the URL into ZSH and you will have it like this:
 ```
-sedona https://www.youtube.com/watch\?v\=ifGUT86tGz4
+sedona https://www.youtube.com/watch\?v\=MktSE45zlrI
 ```
 
 ### Video download
@@ -88,7 +88,7 @@ Since the URLs have 'escapes' already, you must run without quotation marks as w
 
 Let's execute:
 ```
-sedona https://www.youtube.com/watch\?v\=ifGUT86tGz4
+sedona https://www.youtube.com/watch\?v\=MktSE45zlrI
 ```
 
 <p align="center">
@@ -99,7 +99,7 @@ sedona https://www.youtube.com/watch\?v\=ifGUT86tGz4
 
 Now, let's download a playlist:
 ```
-sedona https://www.youtube.com/playlist\?list\=PLIUpNmqKloq8rO01g9ZR2VCe6KP1gyg7V
+sedona https://www.youtube.com/playlist\?list\=PLGtghrm-sc-KI9pS5w6jipUCxjdUSuv1K
 ```
 
 The mp3 files will be numbered according to the playlist ordering. Addionatilly, all files will be stored in a directory with the same name as the playlist. Actually, it's not always the same name, once we have to choose a safe name.
