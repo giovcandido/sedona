@@ -1,4 +1,22 @@
-from pydub import AudioSegment
+from warnings import filterwarnings
+
+from sys import exit as sys_exit
+
+filterwarnings('error')
+
+try:
+    from pydub import AudioSegment
+except Warning as err:
+    error_message = str(err)
+
+    if 'ffmpeg' in error_message and 'avconv' in error_message:
+        print('You need to install ffmpeg package in your system.')
+        print('For more information, check our repository:')
+        print('https://github.com/giovcandido/sedona')
+    else:
+        print(err)
+
+    sys_exit(1)
 
 from os import path, mkdir
 
