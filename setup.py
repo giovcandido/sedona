@@ -5,15 +5,6 @@ from os.path import join
 # Load version
 exec(open(join('sedona', 'version.py')).read())
 
-# Load author
-exec(open(join('sedona', 'author.py')).read())
-
-# Load author email
-exec(open(join('sedona', 'author_email.py')).read())
-
-# Load description
-exec(open(join('sedona', 'description.py')).read())
-
 # Load long description 
 with open("README.md", encoding='utf-8') as f:
     long_description = f.read()
@@ -26,10 +17,10 @@ with open("requirements.txt", encoding='utf-8') as f:
 setup(
     name = 'sedona',
     version = __version__, # type: ignore
-    author = __author__, # type: ignore
-    author_email = __author_email__, # type: ignore
+    author = 'Giovani Candido, Davi Neves',
+    author_email = 'giovcandido@outlook.com, davivirgula@gmail.com',
     license = 'GNU General Public License v3.0',
-    description = __description__, # type: ignore
+    description = 'Sedona is a free youtube mp3 downloader made with Python.',
     long_description = long_description,
     long_description_content_type = 'text/markdown',
     url = 'https://github.com/giovcandido/sedona',
