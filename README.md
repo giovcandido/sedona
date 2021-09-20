@@ -15,7 +15,7 @@ Download all your favorite songs with an easy-to-use cli tool.
 
 - [About](#about)
 - [Usage](#usage)
-- [Example](#example)
+- [Demos](#demos)
 - [Requirements](#requirements)
 - [Installation](#installation)
 - [Contribute](#contribute)
