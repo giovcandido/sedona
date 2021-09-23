@@ -2,9 +2,9 @@ from sys import exit as sys_exit
 
 from .cli import parse_arguments, print_separator, print_arrow_message
 
-from .Video import Video
-from .Playlist import Playlist
-from .Converter import Converter
+from .video import Video
+from .playlist import Playlist
+from .converter import Converter
 
 def main():
     # Get user arguments from sedona command
