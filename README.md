@@ -1,4 +1,4 @@
-# Sedona - YouTube & YT Music mp3 downloader for songs
+# Sedona - YouTube & YT Music mp3 downloader
 
 [![PyPI][pypi-badge]][pypi-link]
 [![PyPI - Downloads][install-badge]][install-link]
