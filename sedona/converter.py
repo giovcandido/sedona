@@ -1,7 +1,5 @@
 from warnings import catch_warnings
 
-from sys import exit as sys_exit
-
 with catch_warnings(record=True) as w:
     from pydub import AudioSegment
 
