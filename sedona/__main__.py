@@ -120,8 +120,8 @@ def handle_playlist(url, position, size_urls):
             if number < playlist.size - 1:
                 print_separator()
 
-        print_arrow_message((f'Playlist "{playlist.title}"')
-                            (' downloaded successfully.', '\n')
+        print_arrow_message((f'Playlist "{playlist.title}"'
+                            ' downloaded successfully.'), '\n')
 
         # Don't print the separator in the last element
         if position < size_urls - 1:
