@@ -6,11 +6,11 @@ from os.path import join
 exec(open(join('sedona', 'version.py')).read())
 
 # Load long description
-with open("README.md", encoding='utf-8') as f:
+with open('README.md', encoding='utf-8') as f:
     long_description = f.read()
 
 # Load requirements
-with open("requirements.txt", encoding='utf-8') as f:
+with open('requirements.txt', encoding='utf-8') as f:
     requirements = f.read()
 
 # Configure setup
@@ -30,14 +30,14 @@ setup(
     install_requires = [requirements],
     python_requires = '>=3.8',
     classifiers = [
-        "Development Status :: 5 - Production/Stable",
-        "Programming Language :: Python :: 3.8",
-        "Environment :: Console",
-        "Operating System :: OS Independent",
-        "Natural Language :: English",
-        "Topic :: Multimedia :: Sound/Audio",
-        "Topic :: Utilities",
-        "License :: OSI Approved :: GNU General Public License v3 (GPLv3)"
+        'Development Status :: 5 - Production/Stable',
+        'Programming Language :: Python :: 3.8',
+        'Environment :: Console',
+        'Operating System :: OS Independent',
+        'Natural Language :: English',
+        'Topic :: Multimedia :: Sound/Audio',
+        'Topic :: Utilities',
+        'License :: OSI Approved :: GNU General Public License v3 (GPLv3)'
     ],
     entry_points = '''
         [console_scripts]
