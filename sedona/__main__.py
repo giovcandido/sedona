@@ -20,8 +20,8 @@ def main():
     else:
         # Otherwise, it's a single url, store it in the list
         urls.append(args.url)
-    
-    # Walk through urls list downloading and converting the corresponding videos
+
+    # Walk through urls downloading and converting the corresponding videos
     size_urls = len(urls)
 
     for position, url in enumerate(urls):
@@ -42,7 +42,7 @@ def read_from_file(filename):
     except FileNotFoundError as err:
         print(err)
         sys_exit(1)
-    
+
     return urls
 
 def handle_video(url, position, size_urls):
@@ -54,19 +54,20 @@ def handle_video(url, position, size_urls):
         print(f'Video title: {video.title}')
         print(f'Duration: {video.duration}')
         print(f'YouTube channel: {video.channel}\n')
-    
+
         print('Downloading audio-only video...')
 
         # Download audio only video to the tmp directory
         video_path = video.download_audio_stream()
-        
+
         # Create converter instance with the video path
         converter = Converter(video_path)
 
         print('Converting downloaded video to mp3...')
 
-        # Get downloaded video and convert it to mp3, store it in home/SedonaMP3
-        converter.convert_audio_stream(video.filename) # default bitrate = 256kbps
+        # Get video and convert it to mp3, store it in home/SedonaMP3
+        # Default bitrate = 256
+        converter.convert_audio_stream(video.filename)
 
         print('Done! File saved to your home directory.')
 
@@ -82,14 +83,14 @@ def handle_playlist(url, position, size_urls):
     try:
         # Create playlist instance with current url
         playlist = Playlist(url)
-        
+
         print_arrow_message(f'Current playlist is "{playlist.title}".\n')
 
-        # Walk through all urls of the playlist                
+        # Walk through all urls of the playlist
         for number, video_url in enumerate(playlist):
             # Create video instance with the curl
             video = Video(video_url)
-            
+
             # Show some informations about track
             print(f'Track number: {str((number + 1))}')
             print(f'Video title: {video.title}')
@@ -97,7 +98,7 @@ def handle_playlist(url, position, size_urls):
             print(f'YouTube channel: {video.channel}\n')
 
             print('Downloading audio-only video...')
-            
+
             # Download audio only video to the tmp directory
             video_path = video.download_audio_stream()
 
@@ -105,12 +106,13 @@ def handle_playlist(url, position, size_urls):
             converter = Converter(video_path)
 
             print('Converting downloaded video to mp3...')
-            
+
             # Add track number to filename
             filename = str((number + 1)) + "." + " " + video.filename
 
-            # Get downloaded video and convert it to mp3, store it in home/SedonaMP3
-            converter.convert_audio_stream(filename, playlist.directory_name) # default bitrate = 256kbps
+            # Get video and convert it to mp3, store it in home/SedonaMP3
+            # Default bitrate = 256kbps
+            converter.convert_audio_stream(filename, playlist.directory_name)
 
             print('Done! File saved to your home directory.')
 
@@ -118,7 +120,8 @@ def handle_playlist(url, position, size_urls):
             if number < playlist.size - 1:
                 print_separator()
 
-        print_arrow_message(f'Playlist "{playlist.title}" downloaded successfully.', '\n')
+        print_arrow_message((f'Playlist "{playlist.title}"')
+                            (' downloaded successfully.', '\n')
 
         # Don't print the separator in the last element
         if position < size_urls - 1:

@@ -7,7 +7,7 @@ with catch_warnings(record=True) as w:
         warning_message = str(w[-1].message)
 
         if 'ffmpeg' in warning_message and 'avconv' in warning_message:
-            print('[Warning] You need to install ffmpeg package in your system.')
+            print('[Warning] You need to install ffmpeg in your system.')
             print('For more information, check our repository:')
             print('https://github.com/giovcandido/sedona')
 
@@ -17,11 +17,11 @@ class Converter:
 
     def __init__(self, path):
         self.__path = path
-    
+
     @property
-    def path(self):  
+    def path(self):
         return self.__path
-    
+
     @path.setter
     def path(self, path):
         self.__path = path
