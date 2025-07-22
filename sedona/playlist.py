@@ -1,6 +1,9 @@
-from pytube import Playlist as PytubePlaylist
+# from pytube import Playlist as PytubePlaylist
+from pytubefix import Playlist as PytubePlaylist
 
-from pytube.helpers import safe_filename
+# from pytube.helpers import safe_filename
+from pytubefix.helpers import safe_filename
+
 
 class Playlist:
 

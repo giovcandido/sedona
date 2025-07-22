@@ -1,16 +1,22 @@
 from setuptools import setup, find_packages
 
+from pathlib import Path
 from os.path import join
 
+
+# Define base path relative to setup.py
+base_dir = Path(__file__).parent
+
+
 # Load version
-exec(open(join('sedona', 'version.py')).read())
+exec(open(join(base_dir, 'sedona', 'version.py')).read())
 
 # Load long description
-with open('README.md', encoding='utf-8') as f:
+with open(join(base_dir, 'README.md'), encoding='utf-8') as f:
     long_description = f.read()
 
 # Load requirements
-with open('requirements.txt', encoding='utf-8') as f:
+with open(join(base_dir, 'requirements.txt'), encoding='utf-8') as f:
     requirements = f.read()
 
 # Configure setup
